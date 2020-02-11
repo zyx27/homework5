@@ -54,15 +54,31 @@ footer{
 Keyframes for animation*/
 
 @-webkit-keyframes logo_wiggle{
+  from{
+    width: 20px;
+  }
+  to{
+    width: 419px;
+  }
 
 }
 
 @keyframes logo_wiggle{
-
+  from{
+    width: 20px;
+  }
+  to{
+    width: 419px;
+  }
 } 
 
 #logo{
-  
+  -webkit-animation-name: logo_wiggle;
+          animation-name: logo_wiggle;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
 }
 
 /* Cards! */
@@ -133,13 +149,16 @@ Keyframes for animation*/
 
 /* Navbar */
 header{
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background: #fff;
   border-bottom: 3px solid #50C7C7;
 }
 
 .nav_links{
- 
+  display: flex;
+  flex-direction: column;
   list-style: none;
 }
 
@@ -158,8 +177,12 @@ header{
 @media screen and (min-width: 850px){
 
   /* Cards! */
+  .pricing {
+    display: flex;
+    flex-direction: row;
+  }
   .card {
-    
+
   }
 
   .card_big{
@@ -170,10 +193,14 @@ header{
   /* Navbar */
 
   header{
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .nav_links{
+    flex-direction: row;
+    justify-content: flex-end;
     
   }
 
@@ -184,8 +211,38 @@ header{
 
 @media print { 
   
+  .pricing{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .card > header{
+    background: #288080;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-radius: 7px 7px 0 0;
+  }
+  .card button{
+    width: 90%;
+    height: 40px;
+    border: 0;
+    margin-left: 12px;
+    border-radius: 7px;
+    background: #288080;
+    color: white;
+    font-size: 1em;
+  }
   .card {
     flex-basis: 200px;
+  }
+  body{
+    background-image: none;
+  }
+  h2{
+    visibility: hidden;
+  }
+  .gallery{
+    visibility: hidden;
   }
 
 }
