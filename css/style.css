@@ -154,8 +154,8 @@ Keyframes for animation*/
   border: 10px #50C7C7 solid;
   margin: 10px;
   width: 300px;
-  height: 260px;
   flex: 0 0 auto;
+  align-self: flex-start;
 }
 
 /* Navbar */
@@ -222,40 +222,45 @@ header{
   }
 }
 
+@media screen and (prefers-reduced-motion: reduce){
+  html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  }
+  #logo{
+    -webkit-animation-name: none;
+            animation-name: none;
+  }
+
+
+}
+
 @media print { 
   
   .pricing{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: start; */
   }
-  .card > header{
-    background: #288080;
-    border: 2px solid #45ADAD;
-    padding: 20px 0;
-    border-radius: 7px 7px 0 0;
+  .card{
+    flex: 0 0 200px;
   }
-  .card button{
-    width: 90%;
-    height: 40px;
-    border: 0;
-    margin-left: 12px;
-    border-radius: 7px;
-    background: #288080;
-    color: white;
-    font-size: 1em;
-  }
-  .card {
-    flex-basis: 200px;
-  }
+  /* .card_big{
+    transform: scaleX(0.9);
+  } */
+ 
   body{
     background-image: none;
   }
-  h2{
-    visibility: hidden;
+  #gallery {
+    display: none;
   }
   .gallery{
-    visibility: hidden;
+    display: none;
   }
 
 }
